@@ -1,0 +1,10 @@
+.grid {
+  display: grid;
+  gap: var(--spacing-m);
+  grid-template-columns: repeat(auto-fill, minmax(7em, 1fr));
+  margin: var(--spacing-m) 0;
+}
+
+.grid img {
+  border-radius: var(--br-small);
+}
