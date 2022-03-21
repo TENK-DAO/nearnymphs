@@ -15,7 +15,7 @@ const Hero: React.FC<{ heroTree: ExpandedHeroTree }> = ({ heroTree }) => {
   const { locale } = useLocales()
   const { saleInfo, mintLimit, mintRateLimit } = useTenk()
   const { saleStatus, userStatus } = useHeroStatuses()
-  const [numberToMint, setNumberToMint] = React.useState(1)
+  const [numberToMint, setNumberToMint] = React.useState(3)
   const hero = heroTree[saleStatus][userStatus]
 
   if (!locale) return null
@@ -55,8 +55,9 @@ const Hero: React.FC<{ heroTree: ExpandedHeroTree }> = ({ heroTree }) => {
             <p className={css.setNumber}>
               <label htmlFor="numberToMint">{hero.setNumber}</label>
               <input
-                max={mintRateLimit}
-                min={1}
+                max={9}
+                min={3}
+                step={3}
                 onChange={e => setNumberToMint(parseInt(e.target.value))}
                 value={numberToMint}
                 type="number"
