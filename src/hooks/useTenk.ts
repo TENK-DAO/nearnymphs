@@ -1,26 +1,23 @@
 import React from "react"
-import { NftContractMetadata, SaleInfo, Status, Token } from "../near/contracts/tenk"
+import { NftContractMetadata, SaleInfo, Token as RawToken } from "../near/contracts/tenk"
 import { TenK } from "../near/contracts"
 import { wallet } from "../near"
 import staleData from "./stale-data-from-build-time.json"
 
 const account_id = wallet.getAccountId()
 
-const stubSaleInfo: SaleInfo = {
-  status: Status.Closed,
-  presale_start: 1648771200000, // 2022-04-01T00:00:00Z
-  sale_start: 1648774800000, // 2022-04-01T01:00:00Z
-  token_final_supply: 0,
-  price: '0',
+type Token = RawToken & {
+  media: string
 }
 
-interface TenkData {
-  saleInfo: SaleInfo
+export interface TenkData {
   contractMetadata?: NftContractMetadata
-  vip: boolean
   mintLimit: number
-  nfts: Token[]
   mintRateLimit?: number
+  nfts: Token[]
+  saleInfo: SaleInfo
+  tokensLeft?: number
+  vip: boolean
 }
 
 // initialize calls at root of file so that first evaluation of this file causes
@@ -28,6 +25,7 @@ interface TenkData {
 const rpcCalls = Promise.all([
   TenK.get_sale_info(),
   TenK.nft_metadata(),
+  TenK.tokens_left(),
   !account_id ? undefined : TenK.whitelisted({ account_id }),
   !account_id ? undefined : TenK.remaining_allowance({ account_id }),
   !account_id ? undefined : TenK.nft_tokens_for_owner({ account_id }),
@@ -40,6 +38,7 @@ export async function rpcData(): Promise<TenkData> {
   const [
     saleInfo,
     contractMetadata,
+    tokensLeft,
     vip,
     mintLimit,
     nfts,
@@ -48,9 +47,12 @@ export async function rpcData(): Promise<TenkData> {
   return {
     saleInfo,
     contractMetadata,
+    tokensLeft,
     vip: vip ?? false,
     mintLimit: mintLimit ?? 0,
-    nfts: nfts ?? [],
+    nfts: nfts?.map(nft => ({ ...nft,
+      media: `${contractMetadata.base_uri ?? ''}${nft.metadata?.media}`
+    })) ?? [],
     mintRateLimit: mintRateLimit ?? undefined,
   }
 }
