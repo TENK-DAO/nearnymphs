@@ -38,7 +38,7 @@
       }
     },
     "saleOpen": {
-      "ps": "NEAR Nymphs Has Begun!",
+      "ps": "NEAR Nymphs Has Begun! Remaining NEAR Nymphs: REMAINING_COUNT",
       "setNumber": "Number to mint",
       "cta": "Mint for MINT_PRICE",
       "action": "MINT",
