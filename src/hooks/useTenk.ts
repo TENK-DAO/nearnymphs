@@ -12,7 +12,7 @@ type Token = RawToken & {
 
 export interface TenkData {
   contractMetadata?: NftContractMetadata
-  mintLimit: number
+  mintLimit?: number
   mintRateLimit?: number
   nfts: Token[]
   saleInfo: SaleInfo
@@ -49,7 +49,7 @@ export async function rpcData(): Promise<TenkData> {
     contractMetadata,
     tokensLeft,
     vip: vip ?? false,
-    mintLimit: mintLimit ?? 0,
+    mintLimit: mintLimit ?? undefined,
     nfts: nfts?.map(nft => ({ ...nft,
       media: `${contractMetadata.base_uri ?? ''}${nft.metadata?.media}`
     })) ?? [],

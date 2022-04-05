@@ -32,15 +32,13 @@
     "presale": {
       "vip": {
         "ps": "Welcome, CURRENT_USER! Pre-mint started. Public minting starts at SALE_START.\n\nYour remaining pre-mint allowance: MINT_LIMIT",
-        "setNumber": "Number to mint",
-        "cta": "Mint for MINT_PRICE",
+        "cta": "Mint a pack of 3 for MINT_PRICE",
         "action": "MINT"
       }
     },
     "saleOpen": {
       "ps": "NEAR Nymphs Has Begun! Remaining NEAR Nymphs: REMAINING_COUNT",
-      "setNumber": "Number to mint",
-      "cta": "Mint for MINT_PRICE",
+      "cta": "Mint a pack of 3 for MINT_PRICE",
       "action": "MINT",
       "signedOut": {
         "action": "SIGN_IN"

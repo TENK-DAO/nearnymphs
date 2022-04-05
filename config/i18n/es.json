@@ -32,15 +32,13 @@
     "presale": {
       "vip": {
         "ps": "¡Bienvenid@, CURRENT_USER! Los VIPs pueden hacer mint ahora. El mint publico empezara a las SALE_START.\n\nTu VIP asignación restante: MINT_LIMIT",
-        "setNumber": "Crear la cantidad de",
-        "cta": "Crear para MINT_PRICE",
+        "cta": "Crear un paquete de 3 para MINT_PRICE",
         "action": "MINT"
       }
     },
     "saleOpen": {
       "ps": "¡NEAR Nymphs Minting ya ha empezado!",
-      "setNumber": "Cantidad a crear",
-      "cta": "Crear para MINT_PRICE",
+      "cta": "Crear un paquete de 3 para MINT_PRICE",
       "action": "MINT",
       "signedOut": {
         "action": "SIGN_IN"
