@@ -13,10 +13,9 @@
   "zoomIn": "Dar un golpe de zoom",
   "zoomOut": "Disminuir el zoom",
   "hero": {
-    "backgroundImage": "hero-bg.svg",
     "image": "hero.png",
-    "title": "Crea la primera belleza Near Nymph del \n*Metaverso*",
-    "body": "Uniendote a la comunidad de Tits Are NEAR, (TAN) DAO, haces de la censura, tema del pasado",
+    "title": "NEAR Nymphs",
+    "body": "NEAR Nymphs es una colección de NFTs dibujados a mano por ceaze. NN es el primer lanzamiento por TAN DAO, apoyando la industria adulta de trabajadores/as, interpretes, artistas, visita nuestro roadmap y unete todos los aliados/as son bienvenidos/as",
     "ps": "¡Puedes crear tu primera NN a las SALE_START!",
     "cta": "Añadir a Calendario",
     "action": "ADD_TO_CALENDAR(SALE_START)",

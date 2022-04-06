@@ -6,7 +6,7 @@
 .content {
   place-items: center;
   grid-template-columns: 5fr 1fr;
-  grid-gap: var(--spacing-l);
+  grid-gap: var(--spacing-s);
 }
 
 .content.hasImage {
