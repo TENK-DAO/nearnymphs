@@ -36,7 +36,7 @@
       }
     },
     "saleOpen": {
-      "ps": "NEAR Nymphs Has Begun! Remaining NEAR Nymphs: REMAINING_COUNT",
+      "ps": "Remaining NEAR Nymphs: REMAINING_COUNT",
       "cta": "Mint a pack of 3 for MINT_PRICE",
       "action": "MINT",
       "signedOut": {
