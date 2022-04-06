@@ -18,7 +18,7 @@ const Landing: React.FC<PageProps<{}, PageContext>> = ({ pageContext: { locale }
     <Seo lang={locale.id} title={locale.title} description={locale.description} />
     <MyNFTs />
     <Hero heroTree={locale.hero} />
-    <div style={{maxWidth: '27em', margin: '5em auto 1em'}}>
+    <div style={{maxWidth: '24em', margin: '5em auto 1em'}}>
       {locale.extraSections?.map((section, i) => (
         <Section key={i} {...section}>
           <Markdown children={section.text} />
